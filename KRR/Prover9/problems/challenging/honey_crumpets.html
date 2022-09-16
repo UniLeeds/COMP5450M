@@ -1,0 +1,119 @@
+<head>
+    <style>
+        table,
+        th,
+        td {
+            border: 2px solid black;
+            border-collapse: separate;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="problem_index.html" style="text-decoration:none">
+<tt>Problem Set: challenging</tt></a>
+
+    <h1> Honey Crumpets </h1>
+    A logic problem by <b>Brandon Bennett</b>
+    <p>
+
+        Your problem is to use <i>first-order logic</i> to represent the following example of reasoning, and use the <i>Prover9</i> theorem prover to prove that the reasoning is valid.
+        <p>
+            Use the following template file to create your Prover9 encoding of the problem:
+            <font size="+1">
+                <a href="honey_crumpets.p9"><b><tt>honey_crumpets.p9</tt></b></a>
+            </font>
+            <p>
+                <b>Marks: </b>There are two marks for each sentence, making a total of <b>32</b> marks.
+
+                <p><b>Outline: </b>I have four crumpets on a plate. Two are honey crumpets and the other two just butter. I can eat two crumpets but must leave two for my freind. Of course, I want to have at least one of the Honey crumpets. But unfortunately,
+                    the warm honey has run into the crumpets, and I cannot tell, or remember, which are the honey ones. However, I do remember that the two honey crumpets were next to each other. Is there a way to take two and be sure that I get a honey
+                    crumpet?
+                    <p>
+                        <b>Domain:</b> You should take the <i>domain of quantification</i> to be the set of crumpets on the plate.
+
+
+                        <h2>Problem Statement</h2>
+
+                        <table cellpadding=6>
+                            <tr bgcolor=#DDFFDD>
+                                <td align=right><b>A1</b></td>
+                                <td>All crumpets have butter or honey on them.</td>
+                            </tr>
+                            <tr bgcolor=#DDFFDD>
+                                <td align=right><b>A2</b></td>
+                                <td>No crumpet has both honey and butter.</td>
+                            </tr>
+                            <tr bgcolor=#DDFFDD>
+                                <td align=right><b>A3</b></td>
+                                <td>There are exactly two honey crumpets.</td>
+                            </tr>
+                            <tr bgcolor=#DDFFDD>
+                                <td align=right><b>A4</b></td>
+                                <td>There are exactly two buttered crumpets.</td>
+                            </tr>
+                            <tr bgcolor=#DDFFDD>
+                                <td align=right><b>A5</b></td>
+                                <td>Any two different crumpets are either next to each other or diagonally opposite.</td>
+                            </tr>
+                            <tr bgcolor=#DDFFDD>
+                                <td align=right><b>A6</b></td>
+                                <td>No two crumpets are next to each other and diagonally opposite.</td>
+                            </tr>
+                            <tr bgcolor=#DDFFDD>
+                                <td align=right><b>A7</b></td>
+                                <td>No crumpet is next to itself.</td>
+                            </tr>
+                            <tr bgcolor=#DDFFDD>
+                                <td align=right><b>A8</b></td>
+                                <td>No crumpet is diagonally opposite itself</td>
+                            </tr>
+                            <tr bgcolor=#DDFFDD>
+                                <td align=right><b>A9</b></td>
+                                <td>If any crumpet A is next to any crumpet B then B is also next to A.</td>
+                            </tr>
+                            <tr bgcolor=#DDFFDD>
+                                <td align=right><b>A10</b></td>
+                                <td>If any crumpet A is diagonally opposite any crumpet B then B is also diagonally opposite A.</td>
+                            </tr>
+                            <tr bgcolor=#DDFFDD>
+                                <td align=right><b>A11</b></td>
+                                <td>Every crumpet is diagonally opposite another crumpet.</td>
+                            </tr>
+                            <tr bgcolor=#DDFFDD>
+                                <td align=right><b>A12</b></td>
+                                <td>Every crumpet is next to two different crumpets.</td>
+                            </tr>
+                            <tr bgcolor=#DDFFDD>
+                                <td align=right><b>A13</b></td>
+                                <td>There are two honey crumpets which are next to each other.</td>
+                            </tr>
+                            <tr bgcolor=#DDFFDD>
+                                <td align=right><b>A14</b></td>
+                                <td>If a crumpet A is diagonally opposite another crumpet B, and B is diagonally opposite another crumpet C, then A is C.</td>
+                            </tr>
+                            <tr bgcolor=#DDFFDD>
+                                <td align=right><b>A15</b></td>
+                                <td>I ate two diagonally opposite crumpets.</td>
+                            </tr>
+                            <tr bgcolor=#DDFFFF>
+                                <td align=right><b>Goal</b></td>
+                                <td>I ate a honey crumpet.</td>
+                            </tr>
+                        </table>
+
+                        <h3>Non-Logical Vocabulary</h3>
+
+                        <b>Predicates:</b>
+                        <font size="+1"><tt>Honey</tt></font>,
+                        <font size="+1"><tt>Butter</tt></font>,
+                        <font size="+1"><tt>NextTo</tt></font>,
+                        <font size="+1"><tt>Diagonal</tt></font>,
+                        <font size="+1"><tt>Ate</tt></font>
+                        <p>
+                            <h4>Notes:</h4>
+                            <ul>
+                                <li>
+                                    The NextTo and Diagonal relations are both <b>anti-relfexive</b> and <b>symmetric</b>.
+                                </li>
+                            </ul>

@@ -1,0 +1,64 @@
+<head>
+    <style>
+        table,
+        th,
+        td {
+            border: 2px solid black;
+            border-collapse: separate;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="problem_index.html" style="text-decoration:none">
+<tt>Problem Set: propositional</tt></a>
+
+    <h1> An Appointment </h1>
+    A logic problem by <b>Adam Richard-Bollans</b>
+    <p>
+
+        Your problem is to use <i>propositional logic</i> to represent the following example of reasoning, and use the <i>Prover9</i> theorem prover to prove that the reasoning is valid.
+        <p>
+            Use the following template file to create your Prover9 encoding of the problem:
+            <font size="+1">
+                <a href="appointment.p9"><b><tt>appointment.p9</tt></b></a>
+            </font>
+            <p>
+                <b>Marks: </b>There are two marks for each sentence, making a total of <b>8</b> marks.
+
+
+
+                <h2>Problem Statement</h2>
+
+                <table cellpadding=6>
+                    <tr bgcolor=#DDFFDD>
+                        <td align=right><b>A1</b></td>
+                        <td>If Alba is not late to her appointment, the optician will be happy.</td>
+                    </tr>
+                    <tr bgcolor=#DDFFDD>
+                        <td align=right><b>A2</b></td>
+                        <td>Alba is early to her appointment.</td>
+                    </tr>
+                    <tr bgcolor=#DDFFDD>
+                        <td align=right><b>A3</b></td>
+                        <td>If Alba is early then Alba is not late.</td>
+                    </tr>
+                    <tr bgcolor=#DDFFFF>
+                        <td align=right><b>Goal</b></td>
+                        <td>The optician is happy.</td>
+                    </tr>
+                </table>
+
+                <h3>Non-Logical Vocabulary</h3>
+
+                <b>Propositional Constants:</b>
+                <font size="+1"><tt>AlbaLate</tt></font>,
+                <font size="+1"><tt>OpticianHappy</tt></font>,
+                <font size="+1"><tt>AlbaEarly</tt></font>
+                <p>
+                    <h4>Notes:</h4>
+                    <ul>
+                        <li>
+                            <b>A3</b> encodes part of the relationship between the meaning of `early' and `late'. If we simply remove this statement, Prover9 won't find a proof as it doesn't know what `early' or `late' mean.
+                        </li>
+                    </ul>

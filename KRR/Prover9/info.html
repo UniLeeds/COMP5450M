@@ -1,0 +1,234 @@
+<style type='text/css'>
+    p {
+        /*border: thin solid black;*/
+        text-align: justify;
+        /*width: 700px;*/
+        /*height: 300px;*/
+    }
+</style>
+
+<body background="https://bb-ai.net/graphics/Schwitters-nobel-ladies-fade-fade.jpg">
+
+    <a href="https://teaching.bb-ai.net/KRR/KRR.html" style="text-decoration:none"><tt>teaching.bb-ai.net/KRR</tt></a>
+
+
+    <h1> Prover9 Exercises</h1>
+    <p> A wide variety of automated theorem provers have been developed since their origin in the 1960's. However, this kind of program is difficult to implement and often difficult to use. Thus, very few theorem provers have gained many users beyond the
+        researchers who developed them. One of the more popular was Otter, which at one time was arguably the most powerful prover around, and was able to verify a number of theorems that mathematicians had hypothesised but not been able to prove. Prover9
+        is an improved version of the original Otter. Although it is not usually regarded as one of the most powerful, it does have the advantage of being relatively simple compared to most of the more modern provers.</p>
+
+    <h4> Contents </h4>
+    <ul>
+        <li> <a href="#setup">Setting Up Prover9</a> </li>
+        <li> <a href="#proofs">Prover9's Proof Method</a> </li>
+        <li> <a href="#simple-examples">Simple Examples</a> </li>
+        <li> <a href="#complex-examples">A More Complex Example</a> </li>
+        <li> <a href="#notes">Some Points to Note</a> </li>
+    </ul>
+
+    <h4>Exercises</h4>
+    Several sets of exercises have been created to enable you to learn how to represent and solve logic problems by translating them into logical formulae and using the Prover9 theorem prover:
+    <ul>
+        <li> <a href="problems/propositional/problem_index.html">
+    Propositional logic problem exercises</a> -- you should do all of these.
+
+            <li> <a href="problems/first_order_intro/problem_index.html">
+    Introductory first-order logic problem exercises</a> -- you should do all of these.
+
+                <li> <a href="problems/challenging/problem_index.html">
+    More challenging logic problems</a> -- do as many as you can to develop your skills of logical analysis and representation.
+
+                    <!--
+  <li> <a href="problems/assignment1/problem_index.html">
+    Problems for the first KRR Assignment, Autumn 2020</a>
+-->
+
+                    <!--
+     <li> <a href="problems/assessment_2020-21/problem_index.html">
+    More challenging logic problems</a>
+   -- Assessed logic problems for the 2020-21 academic year.
+-->
+
+    </ul>
+
+
+    <h2 id="setup">Running Prover9</h2>
+
+    There are two ways you can access the Prover9 software: you can either install it on your machine, or run it removely on a virtual Linux desktop hosted by the university's
+    <font size=+1><tt>feng-linux</tt></font> server.
+
+    <h4>Installing Prover9 on your own Machine</h4>
+    <p>Probably the most convenient way to use Prover9 is by installing it on your machine.<br> Documentation and downloads can be found on the Prover9 home page at:<br>
+        <a href="http://www.cs.unm.edu/~mccune/prover9/">http://www.cs.unm.edu/~mccune/prover9/</a> <br></p>
+    <!-- <p>In particular, the <a href="https://www.cs.unm.edu/~mccune/prover9/manual/2009-11A/">manual</a> may be worth exploring.</p> -->
+
+    <h4>Running Remotely on
+        <font size=+1><tt>feng-linux</tt></font>
+    </h4>
+
+    I have installed <i>Prover9</i> on our linux server
+    <font size=+1><tt>feng-linux</tt>, which enables you to start up a virtual Linux desktop in a browser. To run it this way you should follow these steps:
+
+        <ul>
+            <li> Connect to the University of Leeds VPN. <br> This requres specific VPN software (Pulse Secure) to be installed on your machine. Instructions on connecting to the VPN can be found
+                <a href=https://it.leeds.ac.uk/it?id=kb_article&sysparm_article=KB0014410>
+  here</a>.
+                <p>
+                    <li> Use a browser to open the following URL:
+                        <a href=h ttps://feng-linux.leeds.ac.uk>
+                            <font size=+1><tt>https://feng-linux.leeds.ac.uk</tt></font>
+                        </a>
+                        <br> This should open a virtual desktop in your browser. <br> (It will not work unless you are connected to the Leeds VPN.)
+                        <p>
+                            <li>Open a <i>Terminal</i> window. This can be started from the <i>Applications</i> menu at the top left of the virtual desktop.
+                                <p>
+                                    <li>To start the GUI version of <i>Prover9</i> type the following command in the terminal:<br>
+                                        <font size=+1><tt>~csc5bb/bin/prover9gui &</tt></font>
+                                        <p>
+                                            Or to use the non-gui version you can use a command of the form:</br>
+                                            <font size=+1><tt>~csc5bb/bin/prover9 < input_file > output_file</tt></font>
+                                            </br>
+
+        </ul>
+
+        <h3>Videos</h3>
+        Here are a couple of videos about using Prover9:
+        <ul>
+            <li> <a href="https://youtu.be/TzG1yDYBBfE">Getting Started With
+    Prover9</a>
+                <li> <a href="../videos/prover9%2Bgradescope-demo.mp4">
+    Doing the Prover9 exercises and submitting to Gradescope</a>
+                    </p>
+        </ul>
+
+
+        <h3>Automatic Feedback using Gradescope</h3>
+
+        An automatic grading and feedback system has been set up within <i>Gradescope</i>. You should be able to access this via Minerva by going to the 'Submit My Work' pges of the module's Minerva pages.
+
+
+
+        <h2 id="proofs"> Prover9's Proof Method </h2>
+        <p>The primary mode of inference used by Prover9 is resolution. It repeatedly makes resolution inferences with the aim of detecting inconsistency by deriving a contradiction. As discussed in the lecture notes, resolution provides a complete proof
+            procedure for detecting inconsistency of formulae that are expressed in clausal form.</p>
+
+        <p>Prover9 will first do some preprocessing on the input file to convert it into the form it uses for inferencing. First it negates the formula given as a goal<sup>1</sup>. It then translates all formulae into clausal form. (In some cases it will
+            do some further pre-processing, but you do not need to worry about this.) Then it will compute inferences and by default write these standard output. Unless the input is very simple it will often generate a large number of inferences. If it
+            detects an inconsistency it will stop and print out a proof consisting of the sequence of resolution rules that generated the inconsistency. It will also print out various statistics associated with the proof.</p>
+
+        <p>1. Actually Prover9 allows multiple goal formulae, but it is best to use just one, since the semantics of multiple goals is potentially confusing.</p>
+
+        <h2 id="simple-examples"> Simple Examples </h2>
+        <p>Here is an example of a very simple Prover9 file:</p>
+        <pre>
+formulas(assumptions).
+p & s.		% '&' symbol is for conjunction, 'and'
+p -> q. 	% '->' symbol is for implication, 'implies'
+q -> -r.	% '-' symbol is for negation, 'not'
+end_of_list.
+
+formulas(goals).
+-r | t.		% '|' symbol is for disjunction 'or'
+end_of_list.
+</pre>
+
+        <p>Note: If you are using the GUI version you don't need the lines declaring the formula list and goal list. You just enter the formulae into the appropriate boxes in the interface.</p>
+
+        <p>Here is a slightly more complex example using quantifiers (borrowed from the intro- ductory material on the Prover9 web site):</p>
+        <pre>formulas(assumptions).
+all x all y (subset(x,y) <-> (all z (member(z,x) -> member(z,y)))).
+end_of_list.
+
+formulas(goals).
+all x all y all z (subset(x,y) & subset(y,z) -> subset(x,z)).
+end_of_list.
+</pre>
+
+        <h2 id="complex-examples"> A More Complex Example </h2>
+        <p>Here is a much more complex example devised by Len Schubert. It was originally known as "The Steamroller" because at the time (in the 80s) it was very difficult for automated theorem provers to solve (it would flatten them). However, it presents
+            no problem for a modern theorem prover such as Prover9 running on a modern computer.</p>
+
+        <pre>
+
+% Schubert's "Steamroller" Problem
+% 
+% Wolves, foxes, birds, caterpillars, and snails are animals,
+% and there are some of each of them.
+%
+% Also there are some grains, and grains are plants.
+%
+% Every animal either likes to eat all plants or all animals much
+% smaller than itself that like to eat some plants.
+%
+% Caterpillars and snails are much smaller than birds, which are much
+% smaller than foxes, which are in turn much smaller than wolves.
+%
+% Wolves do not like to eat foxes or grains, while birds like to eat
+% caterpillars but not snails.
+%
+% Caterpillars and snails like to eat some plants.
+
+% Prove there is an animal that likes to eat a grain-eating animal.
+% (where a grain eating animal is one that eats all grains)
+
+formulas(assumptions).
+all x (Wolf(x) -> animal(x)).
+all x (Fox(x) -> animal(x)).
+all x (Bird(x) -> animal(x)).
+all x (Caterpillar(x) -> animal(x)).
+all x (Snail(x) -> animal(x)).
+all x (Grain(x) -> plant(x)).
+
+exists x Wolf(x).
+exists x Fox(x).
+exists x Bird(x).
+exists x Caterpillar(x).
+exists x Snail(x).
+exists x Grain(x).
+
+
+% All animals either eat all plants or eat all smaller animals that eat some plants.
+
+all x ( animal(x) -> (  (all y ( plant(y) -> eats(x,y)))
+                        |
+	 		(all z ( animal(z) & Smaller(z,x) &
+				 (exists u (plant(u) & eats(z,u)))
+				 ->
+				 eats(x,z)
+                               )
+                        )
+                     )
+      ).
+%% Notice the use of indentation. This is not required, but is very
+%% helpful in preventing mistakes in complex formulae.
+
+
+all x all y (Caterpillar(x) & Bird(y) -> Smaller(x,y)).
+all x all y (Snail(x) & Bird(y) -> Smaller(x,y)).
+all x all y (Bird(x) & Fox(y) -> Smaller(x,y)).
+all x all y (Fox(x) & Wolf(y) -> Smaller(x,y)).
+all x all y (Bird(x) & Caterpillar(y) -> eats(x,y)).
+
+all x (Caterpillar(x) -> (exists y (plant(y) & eats(x,y)))).
+all x (Snail(x) -> (exists y (plant(y) & eats(x,y)))).
+
+all x all y (Wolf(x) & Fox(y) -> -eats(x,y)).
+all x all y (Wolf(x) & Grain(y) -> -eats(x,y)).
+all x all y (Bird(x) & Snail(y) -> -eats(x,y)).
+
+end_of_list.
+
+formulas(goals).
+% "there is an animal that eats {an animal that eats all grains}".
+exists x exists y (animal(x) & animal(y) & eats(x,y) &
+					(all z (Grain(z) -> eats(y,z)))).
+end_of_list.
+</pre>
+
+        <h2 id="notes"> Some points to note </h2>
+        Prover9's default rule for distinguishing free variables from constants is that free varaibles start with (lower case) 'u' through 'z'
+
+
+        <p>
+            <a href="http://teaching.bb-ai.net.s3.eu-west-2.amazonaws.com/KRR/Prover9/info.html">
+<img src="https://bb-ai.net/graphics/Sun_symbol.svg" height="20"></a>

@@ -1,0 +1,142 @@
+<head>
+    <style>
+        table,
+        th,
+        td {
+            border: 2px solid black;
+            border-collapse: separate;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="problem_index.html" style="text-decoration:none">
+<tt>Problem Set: assignment1</tt></a>
+
+    <h1> Hipster Chips </h1>
+    A logic puzzle by <b>Brandon Bennett</b>
+    <p>
+
+        Your problem is to use <i>first-order logic</i> to represent the following example of reasoning, and use the <i>Prover9</i> theorem prover to prove that the reasoning is valid.
+        <p>
+            Use the following template file to create your Prover9 encoding of the problem:
+            <font size="+1">
+                <a href="hipster_chips.p9"><b><tt>hipster_chips.p9</tt></b></a>
+            </font>
+            <p>
+                <b>Marks: </b>There are two marks for each sentence, making a total of <b>32</b> marks.
+
+                <p><b>Outline: </b> Can you represent the following sentences and proove by a chain of irrefutable logical inferences that, in certain circumstances, wearing earhook headphones necessarily entails eating chips?
+
+
+                    <h2>Problem Statement</h2>
+
+                    <table cellpadding=6>
+                        <tr bgcolor=#DDFFDD>
+                            <td align=right><b>A1</b></td>
+                            <td>Sam and Tam are students who both wear earhook headphones. *</td>
+                        </tr>
+                        <tr bgcolor=#DDFFDD>
+                            <td align=right><b>A2</b></td>
+                            <td>Sam has long hair and does not like sport.</td>
+                        </tr>
+                        <tr bgcolor=#DDFFDD>
+                            <td align=right><b>A3</b></td>
+                            <td>Sporty students don't have long hair.</td>
+                        </tr>
+                        <tr bgcolor=#DDFFDD>
+                            <td align=right><b>A4</b></td>
+                            <td>Hipsters only like tunes that no non-hipster likes.</td>
+                        </tr>
+                        <tr bgcolor=#DDFFDD>
+                            <td align=right><b>A5</b></td>
+                            <td>Hispsters either have long hair or short hair.</td>
+                        </tr>
+                        <tr bgcolor=#DDFFDD>
+                            <td align=right><b>A6</b></td>
+                            <td>Students only whistle tunes they like.</td>
+                        </tr>
+                        <tr bgcolor=#DDFFDD>
+                            <td align=right><b>A7</b></td>
+                            <td>Sam and Tam both whistle the same tune.</td>
+                        </tr>
+                        <tr bgcolor=#DDFFDD>
+                            <td align=right><b>A8</b></td>
+                            <td>Only hipsters and sporty students wear earhook headphones.</td>
+                        </tr>
+                        <tr bgcolor=#DDFFDD>
+                            <td align=right><b>A9</b></td>
+                            <td>All long-haired hipsters are vegetarians.</td>
+                        </tr>
+                        <tr bgcolor=#DDFFDD>
+                            <td align=right><b>A10</b></td>
+                            <td>All hipsters with short hair are allergic to something.</td>
+                        </tr>
+                        <tr bgcolor=#DDFFDD>
+                            <td align=right><b>A11</b></td>
+                            <td>Tam is not allergic to anything.</td>
+                        </tr>
+                        <tr bgcolor=#DDFFDD>
+                            <td align=right><b>A12</b></td>
+                            <td>Vegetarians don't eat food that contains meat. **</td>
+                        </tr>
+                        <tr bgcolor=#DDFFDD>
+                            <td align=right><b>A13</b></td>
+                            <td>All snacks from burger vans contain meat except chips.</td>
+                        </tr>
+                        <tr bgcolor=#DDFFDD>
+                            <td align=right><b>A14</b></td>
+                            <td>Tam is eating a snack from a burger van.</td>
+                        </tr>
+                        <tr bgcolor=#DDFFDD>
+                            <td align=right><b>A15</b></td>
+                            <td>Give a general axiom linking the concepts 'snack' and 'food'. ***</td>
+                        </tr>
+                        <tr bgcolor=#DDFFFF>
+                            <td align=right><b>Goal</b></td>
+                            <td>Tam is eating chips.</td>
+                        </tr>
+                    </table>
+
+                    <h3>Non-Logical Vocabulary</h3>
+
+                    <b>Name Constants:</b>
+                    <font size="+1"><tt>sam</tt></font>,
+                    <font size="+1"><tt>tam</tt></font>
+                    <p><b>Property Predicates:</b>
+                        <font size="+1"><tt>Student</tt></font>,
+                        <font size="+1"><tt>WearsEarhooks</tt></font>,
+                        <font size="+1"><tt>LongHair</tt></font>,
+                        <font size="+1"><tt>ShortHair</tt></font>,
+                        <font size="+1"><tt>Sporty</tt></font>,
+                        <font size="+1"><tt>Hipster</tt></font>,
+                        <font size="+1"><tt>Tune</tt></font>,
+                        <font size="+1"><tt>Vegetarian</tt></font>,
+                        <font size="+1"><tt>Food</tt></font>,
+                        <font size="+1"><tt>Meat</tt></font>,
+                        <font size="+1"><tt>Snack</tt></font>,
+                        <font size="+1"><tt>Chips</tt></font>,
+                        <font size="+1"><tt>BurgerVan</tt></font>
+                        <p><b>Relation Predicates:</b>
+                            <font size="+1"><tt>Likes</tt></font>,
+                            <font size="+1"><tt>Whistles</tt></font>,
+                            <font size="+1"><tt>Eats</tt></font>,
+                            <font size="+1"><tt>AllergicTo</tt></font>,
+                            <font size="+1"><tt>Contains</tt></font>,
+                            <font size="+1"><tt>From</tt></font>
+                            <p>
+                                <h4>Notes:</h4>
+                                <ul>
+                                    <li>* Here we are representing the phrase 'wears earhooks' by a simple property predicate
+                                        <font size="+1"><tt>WearsEarhooks</tt></font>. We could break it down into a relation
+                                        <font size="+1"><tt>Wears</tt></font> and a property
+                                        <font size="+1"><tt>Earhook</tt></font> but that is not necessary to representing the chain of reasoning required to prove the goal.</li>
+                                    <li>** Words such as 'food' and 'meat' often refer to substances (types of matter) rather than being properties of individual things. But in the context of this problem we treat them as ordinary predicates. Hence,
+                                        <font size="+1"><tt>Food</tt></font> and
+                                        <font size="+1"><tt>Meat</tt></font>
+                                        correspond to properties of being an item of food or a quantity of meat. Similarly,
+                                        <font size="+1"><tt>Chips</tt></font> refers to the property of being a portion of chips (not to the totality of all chips in the universe).
+                                    </li>
+                                    <li>*** For <b>A15</b> you should not translate the sentence. As instructed, you should give a formula that captures a simple connection between the concepts 'snack' and 'food' that is required to complete the chain of
+                                        inference.</li>
+                                </ul>

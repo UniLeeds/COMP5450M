@@ -1,0 +1,69 @@
+<head>
+    <style>
+        table,
+        th,
+        td {
+            border: 2px solid black;
+            border-collapse: separate;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="problem_index.html" style="text-decoration:none">
+<tt>Problem Set: propositional</tt></a>
+
+    <h1> The Stolen Diamond </h1>
+    A logic problem by <b>Brandon Bennett</b>
+    <p>
+
+        Your problem is to use <i>propositional logic</i> to represent the following example of reasoning, and use the <i>Prover9</i> theorem prover to prove that the reasoning is valid.
+        <p>
+            Use the following template file to create your Prover9 encoding of the problem:
+            <font size="+1">
+                <a href="diamond.p9"><b><tt>diamond.p9</tt></b></a>
+            </font>
+            <p>
+                <b>Marks: </b>There are two marks for each sentence, making a total of <b>10</b> marks.
+
+
+
+                <h2>Problem Statement</h2>
+
+                <table cellpadding=6>
+                    <tr bgcolor=#DDFFDD>
+                        <td align=right><b>A1</b></td>
+                        <td>The diamond has been stolen!</td>
+                    </tr>
+                    <tr bgcolor=#DDFFDD>
+                        <td align=right><b>A2</b></td>
+                        <td>If the diamond has been stolen, a thief got into the house.</td>
+                    </tr>
+                    <tr bgcolor=#DDFFDD>
+                        <td align=right><b>A3</b></td>
+                        <td>If a thief got in, either the door was open or the window was smashed.</td>
+                    </tr>
+                    <tr bgcolor=#DDFFDD>
+                        <td align=right><b>A4</b></td>
+                        <td>The window is not smashed.</td>
+                    </tr>
+                    <tr bgcolor=#DDFFFF>
+                        <td align=right><b>Goal</b></td>
+                        <td>The door was open.</td>
+                    </tr>
+                </table>
+
+                <h3>Non-Logical Vocabulary</h3>
+
+                <b>Propositional Constants:</b>
+                <font size="+1"><tt>DiamondStolen</tt></font>,
+                <font size="+1"><tt>ThiefInHouse</tt></font>,
+                <font size="+1"><tt>DoorOpen</tt></font>,
+                <font size="+1"><tt>WindowSmashed</tt></font>
+                <p>
+                    <h4>Notes:</h4>
+                    <ul>
+                        <li>
+                            <b>A4</b> is in the present tense, whereas the other assumptions are in the past tense. We cannot easily represent tenses in propositional logic. Does this matter?
+                        </li>
+                    </ul>

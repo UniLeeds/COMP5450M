@@ -1,0 +1,66 @@
+<head>
+    <style>
+        table,
+        th,
+        td {
+            border: 2px solid black;
+            border-collapse: separate;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="problem_index.html" style="text-decoration:none">
+<tt>Problem Set: propositional</tt></a>
+
+    <h1> The Tennis Lover </h1>
+    Stolen from an anonymous worksheet, posted on the web at University of California Irvine, which says that it comes from an advert for a tennis magazine.
+    <p>
+
+        Your problem is to use <i>propositional logic</i> to represent the following example of reasoning, and use the <i>Prover9</i> theorem prover to prove that the reasoning is valid.
+        <p>
+            Use the following template file to create your Prover9 encoding of the problem:
+            <font size="+1">
+                <a href="tennis.p9"><b><tt>tennis.p9</tt></b></a>
+            </font>
+            <p>
+                <b>Marks: </b>There are two marks for each sentence, making a total of <b>8</b> marks.
+
+                <p><b>Outline: </b>This problem is a bit different from most of the others ones. Rather than being given a specific goal, you need to find an appropriate goal, which both answers the question and is provable from the assumptions. You should
+                    try possible goals one at a time, until you find one that is provable. Alternatively, you could work out the goal by your own reasoning and then check it using Prover9. Of course, if you have represented the other sentences incorrectly,
+                    the correct goal may not be provable, and possibly a different goal could be provable. So you may need to check and alter the other formulae to get a proof of the correct goal.
+
+                    <h2>Problem Statement</h2>
+
+                    <table cellpadding=6>
+                        <tr bgcolor=#DDFFDD>
+                            <td align=right><b>A1</b></td>
+                            <td>If I'm not playing tennis, I'm watching tennis.</td>
+                        </tr>
+                        <tr bgcolor=#DDFFDD>
+                            <td align=right><b>A2</b></td>
+                            <td>If I'm not watching tennis, I'm reading about tennis.</td>
+                        </tr>
+                        <tr bgcolor=#DDFFDD>
+                            <td align=right><b>A3</b></td>
+                            <td>I cannot do more than one tennis-related activity at the same time. *</td>
+                        </tr>
+                        <tr bgcolor=#DDFFFF>
+                            <td align=right><b>Goal</b></td>
+                            <td>What am I doing? **</td>
+                        </tr>
+                    </table>
+
+                    <h3>Non-Logical Vocabulary</h3>
+
+                    <b>Propositional Constants:</b>
+                    <font size="+1"><tt>Playing</tt></font>,
+                    <font size="+1"><tt>Watching</tt></font>,
+                    <font size="+1"><tt>Reading</tt></font>
+                    <p>
+                        <h4>Notes:</h4>
+                        <ul>
+                            <li>* You need to find a propositional formula involving the 3 tennis activity propopositions which is true if only one or none of these is true</li>
+                            <li>** Try each of the activies to find the one that can be proved to be true. <i>Do not put several different goals in together.</i> Although, Prover9 does allow multiple formulae in the goal section, this will not give the proof
+                                of a specific answer that we want.</li>
+                        </ul>

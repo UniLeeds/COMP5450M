@@ -1,0 +1,107 @@
+<head>
+    <style>
+        table,
+        th,
+        td {
+            border: 2px solid black;
+            border-collapse: separate;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="problem_index.html" style="text-decoration:none">
+<tt>Problem Set: challenging</tt></a>
+
+    <h1> Impostors on a ship </h1>
+    A logic problem by <b>Adam Richard-Bollans</b>
+    <p>
+
+        Your problem is to use <i>first-order logic</i> to represent the following example of reasoning, and use the <i>Prover9</i> theorem prover to prove that the reasoning is valid.
+        <p>
+            Use the following template file to create your Prover9 encoding of the problem:
+            <font size="+1">
+                <a href="impostor.p9"><b><tt>impostor.p9</tt></b></a>
+            </font>
+            <p>
+                <b>Marks: </b>There are two marks for each sentence, making a total of <b>28</b> marks.
+
+
+
+                <h2>Problem Statement</h2>
+
+                <table cellpadding=6>
+                    <tr bgcolor=#DDFFDD>
+                        <td align=right><b>A1</b></td>
+                        <td>Blue,Red,Yellow, Purple and a Janitor are crewmembers on a ship and are the only crewmembers.</td>
+                    </tr>
+                    <tr bgcolor=#DDFFDD>
+                        <td align=right><b>A2</b></td>
+                        <td>There are two crewmembers who are impostors.</td>
+                    </tr>
+                    <tr bgcolor=#DDFFDD>
+                        <td align=right><b>A3</b></td>
+                        <td>There are no more than two impostors.</td>
+                    </tr>
+                    <tr bgcolor=#DDFFDD>
+                        <td align=right><b>A4</b></td>
+                        <td>If somebody accuses someone then the accused is an impostor or the accuser is the impostor.</td>
+                    </tr>
+                    <tr bgcolor=#DDFFDD>
+                        <td align=right><b>A5</b></td>
+                        <td>If somebody is known to be an impostor, then they are an impostor.</td>
+                    </tr>
+                    <tr bgcolor=#DDFFDD>
+                        <td align=right><b>A6</b></td>
+                        <td>Impostors know they are impostors.</td>
+                    </tr>
+                    <tr bgcolor=#DDFFDD>
+                        <td align=right><b>A7</b></td>
+                        <td>If someone is murdered then they are not an impostor.</td>
+                    </tr>
+                    <tr bgcolor=#DDFFDD>
+                        <td align=right><b>A8</b></td>
+                        <td>Purple knows one of the impostors.</td>
+                    </tr>
+                    <tr bgcolor=#DDFFDD>
+                        <td align=right><b>A9</b></td>
+                        <td>Purple doesn't know that the Janitor or Blue are an impostor.</td>
+                    </tr>
+                    <tr bgcolor=#DDFFDD>
+                        <td align=right><b>A10</b></td>
+                        <td>Purple was found murdered.</td>
+                    </tr>
+                    <tr bgcolor=#DDFFDD>
+                        <td align=right><b>A11</b></td>
+                        <td>Neither Red or Blue are the Janitor.</td>
+                    </tr>
+                    <tr bgcolor=#DDFFDD>
+                        <td align=right><b>A12</b></td>
+                        <td>Blue accused Yellow.</td>
+                    </tr>
+                    <tr bgcolor=#DDFFDD>
+                        <td align=right><b>A13</b></td>
+                        <td>Nobody knows that Yellow is an impostor.</td>
+                    </tr>
+                    <tr bgcolor=#DDFFFF>
+                        <td align=right><b>Goal</b></td>
+                        <td>Yellow, Purple and the Janitor are not impostors and Blue and Red are impostors.</td>
+                    </tr>
+                </table>
+
+                <h3>Non-Logical Vocabulary</h3>
+
+                <b>Constants:</b>
+                <font size="+1"><tt>Blue</tt></font>,
+                <font size="+1"><tt>Red</tt></font>,
+                <font size="+1"><tt>Yellow</tt></font>,
+                <font size="+1"><tt>Purple</tt></font>,
+                <font size="+1"><tt>Janitor</tt></font>
+                <p><b>Predicates:</b>
+                    <font size="+1"><tt>Crewmember</tt></font>,
+                    <font size="+1"><tt>Impostor</tt></font>,
+                    <font size="+1"><tt>Murdered</tt></font>
+                    <p><b>Relations:</b>
+                        <font size="+1"><tt>Accused</tt></font>,
+                        <font size="+1"><tt>KnowsImpostor</tt></font>
+                        <p>

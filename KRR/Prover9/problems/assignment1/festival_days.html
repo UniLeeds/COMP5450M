@@ -1,0 +1,85 @@
+<head>
+    <style>
+        table,
+        th,
+        td {
+            border: 2px solid black;
+            border-collapse: separate;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="problem_index.html" style="text-decoration:none">
+<tt>Problem Set: assignment1</tt></a>
+
+    <h1> Festival Days </h1>
+    A logic puzzle by <b>Brandon Bennett</b>
+    <p>
+
+        Your problem is to use <i>propositional logic</i> to represent the following example of reasoning, and use the <i>Prover9</i> theorem prover to prove that the reasoning is valid.
+        <p>
+            Use the following template file to create your Prover9 encoding of the problem:
+            <font size="+1">
+                <a href="festival_days.p9"><b><tt>festival_days.p9</tt></b></a>
+            </font>
+            <p>
+                <b>Marks: </b>There are two marks for each sentence, making a total of <b>16</b> marks.
+
+                <p><b>Outline: </b>Why am I sad on a festival day? And what day is it anyway?
+
+                    <h2>Problem Statement</h2>
+
+                    <table cellpadding=6>
+                        <tr bgcolor=#DDFFDD>
+                            <td align=right><b>A1</b></td>
+                            <td>Today is a festival day but I'm not Happy.</td>
+                        </tr>
+                        <tr bgcolor=#DDFFDD>
+                            <td align=right><b>A2</b></td>
+                            <td>Festivals only take place on Moondays, Stardays and Sumdays.</td>
+                        </tr>
+                        <tr bgcolor=#DDFFDD>
+                            <td align=right><b>A3</b></td>
+                            <td>I'm always happy on Stardays</td>
+                        </tr>
+                        <tr bgcolor=#DDFFDD>
+                            <td align=right><b>A4</b></td>
+                            <td>On Sumdays I eat pancakes and on Moondays I eat jelly.</td>
+                        </tr>
+                        <tr bgcolor=#DDFFDD>
+                            <td align=right><b>A5</b></td>
+                            <td>On Moondays I sing and Dance</td>
+                        </tr>
+                        <tr bgcolor=#DDFFDD>
+                            <td align=right><b>A6</b></td>
+                            <td>When I'm ill I can neither sing nor dance.</td>
+                        </tr>
+                        <tr bgcolor=#DDFFDD>
+                            <td align=right><b>A7</b></td>
+                            <td>Eating pancakes or jelly makes me happy unless I'm ill.</td>
+                        </tr>
+                        <tr bgcolor=#DDFFFF>
+                            <td align=right><b>Goal</b></td>
+                            <td>What day is it? *</td>
+                        </tr>
+                    </table>
+
+                    <h3>Non-Logical Vocabulary</h3>
+
+                    <b>Propositions:</b>
+                    <font size="+1"><tt>FestivalDay</tt></font>,
+                    <font size="+1"><tt>Happy</tt></font>,
+                    <font size="+1"><tt>Moonday</tt></font>,
+                    <font size="+1"><tt>Starday</tt></font>,
+                    <font size="+1"><tt>Sumday</tt></font>,
+                    <font size="+1"><tt>Sing</tt></font>,
+                    <font size="+1"><tt>Dance</tt></font>,
+                    <font size="+1"><tt>Ill</tt></font>,
+                    <font size="+1"><tt>EatPancakes</tt></font>,
+                    <font size="+1"><tt>EatJelly</tt></font>
+                    <p>
+                        <h4>Notes:</h4>
+                        <ul>
+                            <li>* The goal should be the answer to this quesiton.</li>
+                        </ul>

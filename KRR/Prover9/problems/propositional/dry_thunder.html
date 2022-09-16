@@ -1,0 +1,59 @@
+<head>
+    <style>
+        table,
+        th,
+        td {
+            border: 2px solid black;
+            border-collapse: separate;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="problem_index.html" style="text-decoration:none">
+<tt>Problem Set: propositional</tt></a>
+
+    <h1> Dry Thunder </h1>
+    A logic problem by <b>Adam Richard-Bollans</b>
+    <p>
+
+        Your problem is to use <i>propositional logic</i> to represent the following example of reasoning, and use the <i>Prover9</i> theorem prover to prove that the reasoning is valid.
+        <p>
+            Use the following template file to create your Prover9 encoding of the problem:
+            <font size="+1">
+                <a href="dry_thunder.p9"><b><tt>dry_thunder.p9</tt></b></a>
+            </font>
+            <p>
+                <b>Marks: </b>There are two marks for each sentence, making a total of <b>8</b> marks.
+
+
+
+                <h2>Problem Statement</h2>
+
+                <table cellpadding=6>
+                    <tr bgcolor=#DDFFDD>
+                        <td align=right><b>A1</b></td>
+                        <td>A Dry Thunderstorm is defined by the occurence of lightning without rain.</td>
+                    </tr>
+                    <tr bgcolor=#DDFFDD>
+                        <td align=right><b>A2</b></td>
+                        <td>There is a dry thunderstorm.</td>
+                    </tr>
+                    <tr bgcolor=#DDFFDD>
+                        <td align=right><b>A3</b></td>
+                        <td>If there is lightning then it is either raining or its hot.</td>
+                    </tr>
+                    <tr bgcolor=#DDFFFF>
+                        <td align=right><b>Goal</b></td>
+                        <td>It is hot.</td>
+                    </tr>
+                </table>
+
+                <h3>Non-Logical Vocabulary</h3>
+
+                <b>Propositional Constants:</b>
+                <font size="+1"><tt>DryThunder</tt></font>,
+                <font size="+1"><tt>Lightning</tt></font>,
+                <font size="+1"><tt>Raining</tt></font>,
+                <font size="+1"><tt>Hot</tt></font>
+                <p>

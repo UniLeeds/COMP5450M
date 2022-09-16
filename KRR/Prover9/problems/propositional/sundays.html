@@ -1,0 +1,75 @@
+<head>
+    <style>
+        table,
+        th,
+        td {
+            border: 2px solid black;
+            border-collapse: separate;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="problem_index.html" style="text-decoration:none">
+<tt>Problem Set: propositional</tt></a>
+
+    <h1> Sunday is a Holiday </h1>
+    A logic problem by <b>Brandon Bennett</b>
+    <p>
+
+        Your problem is to use <i>propositional logic</i> to represent the following example of reasoning, and use the <i>Prover9</i> theorem prover to prove that the reasoning is valid.
+        <p>
+            Use the following template file to create your Prover9 encoding of the problem:
+            <font size="+1">
+                <a href="sundays.p9"><b><tt>sundays.p9</tt></b></a>
+            </font>
+            <p>
+                <b>Marks: </b>There are two marks for each sentence, making a total of <b>12</b> marks.
+
+
+
+                <h2>Problem Statement</h2>
+
+                <table cellpadding=6>
+                    <tr bgcolor=#DDFFDD>
+                        <td align=right><b>A1</b></td>
+                        <td>Sunday is a Holiday.</td>
+                    </tr>
+                    <tr bgcolor=#DDFFDD>
+                        <td align=right><b>A2</b></td>
+                        <td>Saturday and Sunday is the weekend.</td>
+                    </tr>
+                    <tr bgcolor=#DDFFDD>
+                        <td align=right><b>A3</b></td>
+                        <td>On holidays the University is closed.</td>
+                    </tr>
+                    <tr bgcolor=#DDFFDD>
+                        <td align=right><b>A4</b></td>
+                        <td>It is the weekend.</td>
+                    </tr>
+                    <tr bgcolor=#DDFFDD>
+                        <td align=right><b>A5</b></td>
+                        <td>It is not Saturday.</td>
+                    </tr>
+                    <tr bgcolor=#DDFFFF>
+                        <td align=right><b>Goal</b></td>
+                        <td>The University is closed.</td>
+                    </tr>
+                </table>
+
+                <h3>Non-Logical Vocabulary</h3>
+
+                <b>Propositional Constants:</b>
+                <font size="+1"><tt>Sunday</tt></font>,
+                <font size="+1"><tt>Holiday</tt></font>,
+                <font size="+1"><tt>Saturday</tt></font>,
+                <font size="+1"><tt>Weekend</tt></font>,
+                <font size="+1"><tt>UniversityClosed</tt></font>
+                <p>
+                    <h4>Notes:</h4>
+                    <ul>
+                        <li>
+                            Note that in some contexts we can translate names of days or time periods into propositions. Thus, sometimes 'Saturday' can be translated as a proposition, i.e. as 'It is Saturday'. If we were using first-order logic we would probably treat 'Saturday'
+                            and 'Sunday' as constants and 'weekend' and 'holiday' as predicates, but for this problem you need to consider all of them as propositions which can be true or false at a given time.
+                        </li>
+                    </ul>

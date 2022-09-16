@@ -1,0 +1,104 @@
+<head>
+    <style>
+        table,
+        th,
+        td {
+            border: 2px solid black;
+            border-collapse: separate;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="problem_index.html" style="text-decoration:none">
+<tt>Problem Set: assignment1</tt></a>
+
+    <h1> The Ingleton Barber </h1>
+    A logic puzzle by <b>Brandon Bennett</b>
+    <p>
+
+        Your problem is to use <i>first-order logic (with equality)</i> to represent the following example of reasoning, and use the <i>Prover9</i> theorem prover to prove that the reasoning is valid.
+        <p>
+            Use the following template file to create your Prover9 encoding of the problem:
+            <font size="+1">
+                <a href="ingleton_barber.p9"><b><tt>ingleton_barber.p9</tt></b></a>
+            </font>
+            <p>
+                <b>Marks: </b>There are two marks for each sentence, making a total of <b>12</b> marks.
+
+                <p><b>Outline: </b> This puzzle concerns an inconsistent barber from Ingleton and a pink dog that ate my homework. <br> Ingleton is a village in the Yorkshire Dales, famous for its beautiful
+                    <i>waterfalls walk</i>. But if you want to get your hair cut in Ingleton you will end up in tangles.*<br> You may be surprised that logical reasoning can lead to unexpected consequences.
+
+
+                    <h2>Problem Statement</h2>
+
+                    <table cellpadding=6>
+                        <tr bgcolor=#DDFFDD>
+                            <td align=right><b>A1</b></td>
+                            <td>Two of the people who live in the village Ingleton are Tom and his old father, Alfred, who is blind.</td>
+                        </tr>
+                        <tr bgcolor=#DDFFDD>
+                            <td align=right><b>A2</b></td>
+                            <td>The concept of 'barber' can be defined as: "any person who shaves some other person". **</td>
+                        </tr>
+                        <tr bgcolor=#DDFFDD>
+                            <td align=right><b>A3</b></td>
+                            <td>No barber is bearded and no person is shaved by a blind person, so Tom shaves Alfred.***</td>
+                        </tr>
+                        <tr bgcolor=#DDFFDD>
+                            <td align=right><b>A4</b></td>
+                            <td> Everyone who lives in a village has a beard, unless they shave themself or are shaved by a barber who lives in the same village. ****</td>
+                        </tr>
+                        <tr bgcolor=#DDFFDD>
+                            <td align=right><b>A5</b></td>
+                            <td>No more than one barber lives in any village and everyone living in Ingleton who shaves themself never gets shaved by a barber.</td>
+                        </tr>
+                        <tr bgcolor=#DDFFFF>
+                            <td align=right><b>Goal</b></td>
+                            <td>A pink dog ate my homework. *****</td>
+                        </tr>
+                    </table>
+
+                    <h3>Non-Logical Vocabulary</h3>
+
+                    <b>Constants:</b>
+                    <font size="+1"><tt>tom</tt></font>,
+                    <font size="+1"><tt>alfred</tt></font>,
+                    <font size="+1"><tt>ingleton</tt></font>,
+                    <font size="+1"><tt>me</tt></font>
+                    <p><b>Property Predicates:</b>
+                        <font size="+1"><tt>Person</tt></font>,
+                        <font size="+1"><tt>Village</tt></font>,
+                        <font size="+1"><tt>Old</tt></font>,
+                        <font size="+1"><tt>Blind</tt></font>,
+                        <font size="+1"><tt>Barber</tt></font>,
+                        <font size="+1"><tt>Bearded</tt></font>,
+                        <font size="+1"><tt>Pink</tt></font>,
+                        <font size="+1"><tt>Dog</tt></font>,
+                        <font size="+1"><tt>Homework</tt></font>
+                        <p><b>Relation Predicates:</b>
+                            <font size="+1"><tt>Lives</tt></font>,
+                            <font size="+1"><tt>IsFatherOf</tt></font>,
+                            <font size="+1"><tt>Shaves</tt></font>,
+                            <font size="+1"><tt>Ate</tt></font>,
+                            <font size="+1"><tt>Of</tt></font>
+                            <p><b>Equality relation:</b>
+                                <font size="+1"><tt>=</tt></font>
+                                <p>
+                                    <h4>Notes:</h4>
+                                    <ul>
+                                        <li> * Why? This is a bonus puzzle for which you should use <i>Google Maps</i> rather than <i>Prover9</i>.</li>
+                                        <li> ** For <b>A2</b> your need to give an axiom that fixes the meaning of the
+                                            <font size="+1"><tt>Barber</tt></font> prediate in accordance with the given definition.</li>
+                                        <li> *** Note that we cannot fully capture the meaning of 'so' but we can approximate it with a truth functional connective.</li>
+                                        <li> **** This statement leaves open the possibility that in some villages there may be people who shave themselves and also sometimes get shaved by a barber. It also allows the possibility that people with beards may
+                                            sometimes be shaved.</li>
+                                        <li> *****</br>
+                                            <b>(a) </b> In representing the <b>Goal</b> sentence you should use the relation
+                                            <font size="+1"><tt>Of</tt></font>, where, for example,
+                                            <font size="+1"><tt>Of(x,john)</tt></font> would mean that whatever is referred to by
+                                            <font size="+1"><tt>x</tt></font> belongs to or was produced by John.
+                                            <br>
+                                            <b>(b)</b> Is the <b>Goal</b> sentence a valid consequence of the assumptions? Is it provable by <i>Prover9</i>? <br> Remember that a conclusion is a valid consequence of some assumptions if and only if: in
+                                            all circumstances where the assumptions all are true, the conlusion is also true.<br> (These extra questios are not assessed but you should think about them.)</li>
+                                    </ul>
